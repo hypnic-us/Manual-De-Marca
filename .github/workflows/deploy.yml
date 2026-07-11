@@ -1,0 +1,43 @@
+name: Deploy a Cloud Run
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Autenticar en Google Cloud (Workload Identity)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/592996896254/locations/global/workloadIdentityPools/github/providers/maker-hypnic
+          service_account: hypnic-deployer@landing-juan-montoya.iam.gserviceaccount.com
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: Deploy manual-de-marca (producción)
+        run: |
+          gcloud run deploy manual-de-marca \
+            --source . \
+            --project landing-juan-montoya \
+            --region us-central1 \
+            --no-invoker-iam-check \
+            --memory 512Mi \
+            --quiet
+
+      - name: Verificar health
+        run: |
+          URL=$(gcloud run services describe manual-de-marca --project landing-juan-montoya --region us-central1 --format "value(status.url)")
+          curl -sf "$URL/health"
