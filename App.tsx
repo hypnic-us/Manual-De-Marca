@@ -5,8 +5,10 @@ import Logo from './components/Logo';
 import BackgroundTerrain from './components/BackgroundTerrain';
 import Hero from './components/Hero';
 import Strategy from './components/Strategy';
+import Architecture from './components/Architecture';
 import Services from './components/Services';
 import VerbalIdentity from './components/VerbalIdentity';
+import Proof from './components/Proof';
 import VisualSystem from './components/VisualSystem';
 
 function Header() {
@@ -40,8 +42,10 @@ function Manual() {
     <div className="max-w-6xl mx-auto space-y-40 animate-in fade-in duration-700">
       <Hero />
       <Strategy />
-      <Services />
+      <Architecture />
       <VerbalIdentity />
+      <Services />
+      <Proof />
       <VisualSystem />
     </div>
   );

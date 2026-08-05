@@ -23,7 +23,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: projects/592996896254/locations/global/workloadIdentityPools/github/providers/maker-hypnic
-          service_account: hypnic-deployer@landing-juan-montoya.iam.gserviceaccount.com
+          service_account: hypnic-deployer@hypnic-ops.iam.gserviceaccount.com
 
       - uses: google-github-actions/setup-gcloud@v2
 

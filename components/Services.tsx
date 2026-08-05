@@ -3,22 +3,50 @@ import { useTranslation } from 'react-i18next';
 
 export default function Services() {
   const { t, i18n } = useTranslation();
-  
-  const services = [
+
+  const services = i18n.language === 'es' ? [
     {
       num: "01",
-      title: i18n.language === 'es' ? "Espacios phygital" : "Phygital spaces",
-      desc: i18n.language === 'es' ? "Retail, showrooms, experiencias inmersivas. Donde el hardware, software y diseño convergen." : "Retail, showrooms, immersive experiences. Where hardware, software, and design converge."
+      name: "Amplify",
+      title: "Technology for products & operations.",
+      desc: "Estudio el negocio por dentro y encuentro los puntos donde la tecnología multiplica lo que ya funciona — no por moda, por evidencia. Después diseño y construyo el sistema completo: software, hardware, integración. Todo conectado como una sola pieza.",
+      meta: "Cuándo: amplificar lo existente o construir desde cero plataformas, SaaS y herramientas digitales. Entregable: tecnología que ya está trabajando para el negocio."
     },
     {
       num: "02",
-      title: i18n.language === 'es' ? "Contenido y campañas phygital" : "Phygital content & campaigns",
-      desc: i18n.language === 'es' ? "Dirección creativa, contenido vía IA, curaduría de marca. De lo físico a lo digital, como un solo lenguaje visual." : "Creative direction, AI-driven content, brand curation. Physical through digital, as one visual language."
+      name: "Echo",
+      title: "Transmedia marketing campaigns.",
+      desc: "Campañas que arrancan en lo digital y se mueven a todos los puntos donde la marca toca al cliente — redes, físico, email, espacio, producto. La historia es la misma; lo que cambia es la forma. El lenguaje se adapta a cada canal sin perder la voz.",
+      meta: "Cuándo: lanzamientos multi-audiencia o campañas que necesitan decir una cosa, fuerte, en todos lados. Entregable: sistema completo — concepto, ejecución, distribución, medición."
     },
     {
       num: "03",
-      title: i18n.language === 'es' ? "Ingeniería de producto digital" : "Digital product engineering",
-      desc: i18n.language === 'es' ? "Plataformas, SaaS, herramientas. Producto digital puro, de principio a fin." : "Platforms, SaaS, embedded tools. Pure digital product, end to end."
+      name: "Stage",
+      title: "Physical experiences with technology.",
+      desc: "Stands, lanzamientos, instalaciones, activaciones y showrooms experienciales. No tecnología por moda. No pantallas porque sí. Tecnología que hace que la experiencia se sienta distinta a todo lo que ya existe. Un sistema, no una decoración.",
+      meta: "Cuándo: lanzamientos de producto, ferias, pop-ups, showrooms, instalaciones interactivas. Entregable: espacios construidos listos para operar — hardware integrado, software corriendo."
+    }
+  ] : [
+    {
+      num: "01",
+      name: "Amplify",
+      title: "Technology for products & operations.",
+      desc: "I study the business from the inside and find where technology multiplies what already works — not for fashion, for evidence. Then I design and build the complete system: software, hardware, integration. All connected as one piece.",
+      meta: "When: amplifying what exists, or building platforms, SaaS, and digital tools from scratch. Deliverable: technology that is already working for the business."
+    },
+    {
+      num: "02",
+      name: "Echo",
+      title: "Transmedia marketing campaigns.",
+      desc: "Campaigns that start digital and move to every point where the brand touches the customer — social, physical, email, space, product. The story stays the same; the form changes. The language adapts to each channel without losing the voice.",
+      meta: "When: multi-audience launches or campaigns that need to say one thing, loudly, everywhere. Deliverable: a complete system — concept, execution, distribution, measurement."
+    },
+    {
+      num: "03",
+      name: "Stage",
+      title: "Physical experiences with technology.",
+      desc: "Stands, launches, installations, activations, and experiential showrooms. Not technology for fashion. Not screens for the sake of it. Technology that makes the experience feel different from anything that already exists. A system, not a decoration.",
+      meta: "When: product launches, trade fairs, pop-ups, showrooms, interactive installations. Deliverable: built spaces ready to operate — integrated hardware, software running."
     }
   ];
 
@@ -29,24 +57,26 @@ export default function Services() {
           <h2 className="font-mono text-xs tracking-widest uppercase text-earth">{t('services.title')}</h2>
         </div>
         <div className="md:col-span-9 border-t border-ink pt-4">
-          <h3 className="font-serif italic text-4xl md:text-5xl mb-16">{t('services.subtitle')}</h3>
-          
+          <h3 className="font-serif italic text-4xl md:text-5xl mb-4">{t('services.subtitle')}</h3>
+          <p className="font-sans font-light text-sm text-ink/70 max-w-2xl mb-16">
+            {t('services.intro')}
+          </p>
+
           <div className="grid grid-cols-1 gap-4">
             {services.map((s, i) => (
               <div key={i} className="flex flex-col md:flex-row gap-6 md:gap-12 bg-stone border border-ink/10 rounded-[2rem] p-8 hover:border-earth transition-colors group">
-                <div className="font-mono font-bold text-4xl md:text-5xl text-ink/20 group-hover:text-earth transition-colors">
+                <div className="font-mono font-bold text-4xl md:text-5xl text-ink/20 group-hover:text-earth transition-colors shrink-0">
                   {s.num}
                 </div>
-                <div className="flex-1 flex flex-col justify-center">
-                  <h4 className="font-serif text-2xl mb-2">{s.title}</h4>
-                  <p className="font-sans font-light text-sm text-ink/70 max-w-md leading-relaxed">
+                <div className="flex-1 flex flex-col justify-center gap-2">
+                  <h4 className="font-serif text-2xl">{s.name}</h4>
+                  <p className="font-serif italic text-lg text-earth">{s.title}</p>
+                  <p className="font-sans font-light text-sm text-ink/70 max-w-lg leading-relaxed">
                     {s.desc}
                   </p>
-                </div>
-                <div className="hidden md:flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full border border-dashed border-ink/20 flex items-center justify-center group-hover:border-earth group-hover:text-earth transition-colors">
-                    <span className="font-mono text-xl">→</span>
-                  </div>
+                  <p className="font-mono text-[10px] uppercase tracking-wider text-ink/50 max-w-lg leading-relaxed mt-2">
+                    {s.meta}
+                  </p>
                 </div>
               </div>
             ))}
@@ -72,9 +102,9 @@ export default function Services() {
               {i18n.language === 'es' ? "GLOBAL. PRIORIDAD INGLÉS. SEIS MERCADOS." : "GLOBAL. ENGLISH-FIRST. SIX MARKETS."}
             </p>
             <div className="flex flex-wrap gap-2">
-              {['Colombia', 'Mexico', 'USA', 'France', 'Spain', 'Middle East'].map(market => (
+              {['Colombia', 'Mexico', 'USA', 'France', 'Spain', 'Central America'].map(market => (
                 <span key={market} className="bg-stone/10 px-4 py-2 rounded-full font-mono text-[10px] uppercase tracking-wider">
-                  {i18n.language === 'es' ? (market === 'Spain' ? 'España' : market === 'Middle East' ? 'Medio Oriente' : market === 'France' ? 'Francia' : market === 'USA' ? 'EE. UU.' : market) : market}
+                  {i18n.language === 'es' ? (market === 'Spain' ? 'España' : market === 'Central America' ? 'Centroamérica' : market === 'France' ? 'Francia' : market === 'USA' ? 'EE. UU.' : market) : market}
                 </span>
               ))}
             </div>

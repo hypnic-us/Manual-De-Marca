@@ -2,16 +2,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #FFFFFF; /* Text on dark bg */
-  --color-ink-inverse: #000000; /* Text on light bg */
-  --color-stone: #1C1C1E; /* Dark grey for cards */
-  --color-paper: #09090B; /* Deep black for main bg */
+  --color-ink: #1A1A1A; /* Primary text / dark neutral */
+  --color-ink-inverse: #FFFFFF; /* Text on dark/signal surfaces */
+  --color-stone: #E8E4DF; /* Warm light grey for cards */
+  --color-paper: #F5F3F0; /* Main background */
   --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-earth: #FF5E2E; /* Vibrant reference orange */
+  --color-black: #1A1A1A;
+  --color-earth: #C1440E; /* Radiant Earth — WGSN x Coloro Colour of the Year 2028. The only accent. */
 
   --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   --animate-marquee: marquee 30s linear infinite;
@@ -22,8 +22,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom right, #1A0B05 0%, #7A1F05 50%, #FF5E2E 100%);
-  background-attachment: fixed;
+  background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

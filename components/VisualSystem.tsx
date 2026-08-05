@@ -14,38 +14,48 @@ export default function VisualSystem() {
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-ink/70 mb-8">{i18n.language === 'es' ? "02 — SISTEMA DE COLOR" : "02 — COLOR SYSTEM"}</h2>
           
           <div className="flex w-full h-32 md:h-40 mb-4 rounded-t-lg overflow-hidden border border-ink/10">
+            <div className="flex-1 bg-[#1A1A1A]"></div>
+            <div className="flex-1 bg-[#E8E4DF]"></div>
+            <div className="flex-1 bg-[#F5F3F0] border-x border-ink/10"></div>
             <div className="flex-1 bg-[#FFFFFF]"></div>
-            <div className="flex-1 bg-[#000000]"></div>
-            <div className="flex-1 bg-[#1C1C1E]"></div>
-            <div className="flex-1 bg-[#09090B]"></div>
-            <div className="flex-1 bg-[#FF5E2E]"></div>
+            <div className="flex-1 bg-[#C1440E]"></div>
           </div>
-          
+
           <div className="flex w-full text-left mb-10">
             <div className="flex-1 pr-2">
               <p className="font-sans text-[13px] text-ink/90">Ink</p>
-              <p className="font-mono text-[10px] text-ink/60">#FFFFFF</p>
-            </div>
-            <div className="flex-1 pr-2">
-              <p className="font-sans text-[13px] text-ink/90">Inverse</p>
-              <p className="font-mono text-[10px] text-ink/60">#000000</p>
+              <p className="font-mono text-[10px] text-ink/60">#1A1A1A</p>
             </div>
             <div className="flex-1 pr-2">
               <p className="font-sans text-[13px] text-ink/90">Stone</p>
-              <p className="font-mono text-[10px] text-ink/60">#1C1C1E</p>
+              <p className="font-mono text-[10px] text-ink/60">#E8E4DF</p>
             </div>
             <div className="flex-1 pr-2">
               <p className="font-sans text-[13px] text-ink/90">Paper</p>
-              <p className="font-mono text-[10px] text-ink/60">#09090B</p>
+              <p className="font-mono text-[10px] text-ink/60">#F5F3F0</p>
             </div>
             <div className="flex-1 pr-2">
-              <p className="font-sans text-[13px] text-ink/90">Earth</p>
-              <p className="font-mono text-[10px] text-ink/60">#FF5E2E</p>
+              <p className="font-sans text-[13px] text-ink/90">White</p>
+              <p className="font-mono text-[10px] text-ink/60">#FFFFFF</p>
+            </div>
+            <div className="flex-1 pr-2">
+              <p className="font-sans text-[13px] text-ink/90">Radiant Earth</p>
+              <p className="font-mono text-[10px] text-ink/60">#C1440E · Coloro 017-42-31</p>
             </div>
           </div>
-          
+
+          {/* Neutrals / signal ratio */}
+          <div className="flex w-full h-16 border border-ink/15 rounded-lg overflow-hidden mb-6">
+            <div className="flex items-center pl-5 font-mono text-[10px] uppercase tracking-widest" style={{ flex: 8, background: 'linear-gradient(90deg, var(--color-paper), var(--color-stone))' }}>
+              {i18n.language === 'es' ? 'Neutros · 80%' : 'Neutrals · 80%'}
+            </div>
+            <div className="flex items-center justify-center text-ink-inverse font-mono text-[10px] uppercase tracking-widest bg-earth" style={{ flex: 2 }}>
+              {i18n.language === 'es' ? 'Señal · 20% máx' : 'Signal · 20% max'}
+            </div>
+          </div>
+
           <p className="font-sans text-[15px] leading-relaxed text-ink/90 max-w-4xl">
-            {i18n.language === 'es' ? "Earth (naranja vibrante) se usa con moderación — como bloques de acento, destacando e interacciones principales. Nunca como fondo dominante en UI. La aplicación está dominada por tonos oscuros inmersivos, logrando una estética brutalista." : "Earth (vibrant orange) is used sparingly — as accent blocks, highlights, and interactive elements. Never as dominant background in UI. The application is dominated by immersive dark tones, achieving a brutalist aesthetic."}
+            {i18n.language === 'es' ? "Cuatro neutros cargan la marca. Radiant Earth — WGSN × Coloro Colour of the Year 2028 — es el único acento: arcilla, quemado, con tierra. Es la puntuación, no la oración. Nunca como fondo dominante en UI, nunca más del 20% de una composición." : "Four neutrals carry the brand. Radiant Earth — WGSN × Coloro Colour of the Year 2028 — is the only accent: clay, burnt, earthbound. It's the punctuation, not the sentence. Never a dominant UI background, never more than 20% of a composition."}
           </p>
         </div>
 
@@ -99,7 +109,7 @@ export default function VisualSystem() {
                 </div>
                 <h4 className="font-serif text-3xl">{i18n.language === 'es' ? "El Bloque de Cristal" : "The Glass Block"}</h4>
                 <p className="font-sans font-light text-sm leading-relaxed text-ink/80">
-                  {i18n.language === 'es' ? "Usa contenedores semitransparentes con desenfoque de fondo (glassmorphism) combinados con gradientes sutiles y bordes delicados. Crea profundidad y modernidad mientras mantiene legibilidad sobre fondos oscuros." : "Use semi-transparent containers with background blur (glassmorphism) combined with subtle gradients and delicate borders. It creates depth and modernity while maintaining legibility over dark backgrounds."}
+                  {i18n.language === 'es' ? "Un campo de Radiant Atmosphere — radial, orgánico, nunca en bandas — marca la temperatura. El mensaje vive en un glass block encima, siempre en la zona estable del campo, nunca en el centro turbulento." : "A Radiant Atmosphere field — radial, organic, never banded — sets the temperature. The message lives in a glass block on top, always in the stable zone of the field, never the turbulent center."}
                 </p>
               </div>
               <div className="relative h-64 md:h-auto rounded-xl overflow-hidden flex items-center justify-center p-8 bg-black/40">
@@ -184,19 +194,19 @@ export default function VisualSystem() {
               <div>
                 <h5 className="font-mono text-xs text-earth mb-4 uppercase tracking-widest">{i18n.language === 'es' ? "Hacer" : "Do"}</h5>
                 <ul className="space-y-3 font-sans font-light text-sm">
-                  <li className="flex items-center gap-3"><span className="text-earth font-mono">+</span> {i18n.language === 'es' ? "Usar espacio blanco generosamente" : "Use white space generously"}</li>
-                  <li className="flex items-center gap-3"><span className="text-earth font-mono">+</span> {i18n.language === 'es' ? "Mezclar serif cursiva con sans bold" : "Mix serif italic with sans bold"}</li>
-                  <li className="flex items-center gap-3"><span className="text-earth font-mono">+</span> {i18n.language === 'es' ? "Usar glassmorphism para interfaces (UI) en primer plano" : "Use glassmorphism for foreground interfaces (UI)"}</li>
+                  <li className="flex items-center gap-3"><span className="text-earth font-mono">+</span> {i18n.language === 'es' ? "Un campo de Radiant Atmosphere por composición" : "One Radiant Atmosphere field per composition"}</li>
+                  <li className="flex items-center gap-3"><span className="text-earth font-mono">+</span> {i18n.language === 'es' ? "Mezclar serif cursiva con sans regular" : "Mix serif italic with sans regular"}</li>
+                  <li className="flex items-center gap-3"><span className="text-earth font-mono">+</span> {i18n.language === 'es' ? "Grano fino (4–6%) sobre cada campo — arcilla, no plástico" : "Fine grain (4–6%) over every field — clay, not plastic"}</li>
                   <li className="flex items-center gap-3"><span className="text-earth font-mono">+</span> {i18n.language === 'es' ? "Mantener fotografía desaturada" : "Keep photography desaturated"}</li>
                 </ul>
               </div>
               <div>
                 <h5 className="font-mono text-xs text-earth mb-4 uppercase tracking-widest">{i18n.language === 'es' ? "No Hacer" : "Don't"}</h5>
                 <ul className="space-y-3 font-sans font-light text-sm text-ink-inverse/70">
-                  <li className="flex items-center gap-3"><span className="text-ink-inverse/30 font-mono">-</span> {i18n.language === 'es' ? "Abusar de colores vibrantes como fondos" : "Overuse vibrant colors as backgrounds"}</li>
+                  <li className="flex items-center gap-3"><span className="text-ink-inverse/30 font-mono">-</span> {i18n.language === 'es' ? "Gradientes en bandas — la luz no se mueve en franjas" : "Banded gradients — light doesn't move in stripes"}</li>
                   <li className="flex items-center gap-3"><span className="text-ink-inverse/30 font-mono">-</span> {i18n.language === 'es' ? "Usar más de un color de acento principal" : "Use more than one accent color"}</li>
-                  <li className="flex items-center gap-3"><span className="text-ink-inverse/30 font-mono">-</span> {i18n.language === 'es' ? "Centrar todo simétricamente" : "Center everything symmetrically"}</li>
-                  <li className="flex items-center gap-3"><span className="text-ink-inverse/30 font-mono">-</span> {i18n.language === 'es' ? "Usar íconos decorativos" : "Use decorative icons"}</li>
+                  <li className="flex items-center gap-3"><span className="text-ink-inverse/30 font-mono">-</span> {i18n.language === 'es' ? "Glows en objetos o texto — la atmósfera vive en el fondo" : "Glows on objects or text — atmosphere lives in the background"}</li>
+                  <li className="flex items-center gap-3"><span className="text-ink-inverse/30 font-mono">-</span> {i18n.language === 'es' ? "Drop shadows — la profundidad viene del campo y el glass" : "Drop shadows — depth comes from the field and the glass"}</li>
                 </ul>
               </div>
             </div>

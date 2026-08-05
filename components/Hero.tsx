@@ -47,13 +47,13 @@ export default function Hero() {
 
       {/* Overlay text */}
       <div className="absolute top-1/3 left-4 md:left-16 max-w-2xl">
-        <h1 className="font-serif italic text-4xl md:text-6xl lg:text-7xl leading-tight mb-4 text-ink drop-shadow-lg">
-          {i18n.language === 'es' ? t('hero.title_es', 'Potencializa tus productos') : t('hero.title_en', 'Boost your products')}<br />
-          <span className="not-italic font-sans font-medium tracking-tight">{i18n.language === 'es' ? t('hero.subtitle_es', 'con el uso de tecnología.') : t('hero.subtitle_en', 'with the use of technology.')}</span>
+        <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-tight mb-4 text-ink drop-shadow-lg">
+          {i18n.language === 'es' ? t('hero.title_es', 'Las marcas se experimentan,') : t('hero.title_en', 'Brands are experienced,')}<br />
+          <span className="italic text-earth">{i18n.language === 'es' ? t('hero.subtitle_es', 'no solo se ven.') : t('hero.subtitle_en', 'not just seen.')}</span>
         </h1>
         <p className="font-mono text-xs md:text-sm uppercase tracking-widest text-ink/80 mt-6 max-w-lg border-l-2 border-earth pl-4">
-          {i18n.language === 'es' ? t('hero.arch_title_es', 'Servicios arquitectónicos') : t('hero.arch_title_en', 'Architectural services')}<br/>
-          <span className="text-ink/60">{i18n.language === 'es' ? t('hero.arch_subtitle_es', 'usando tecnología inmersiva para disrumpir la industria.') : t('hero.arch_subtitle_en', 'using immersive tech to disrupt the industry.')}</span>
+          {i18n.language === 'es' ? t('hero.arch_title_es', 'Brand OS V4.0 — Ingeniero de Diseño Phygital') : t('hero.arch_title_en', 'Brand OS V4.0 — Phygital Design Engineer')}<br/>
+          <span className="text-ink/60">{i18n.language === 'es' ? t('hero.arch_subtitle_es', 'Un documento. Todo el sistema.') : t('hero.arch_subtitle_en', 'One document. The whole system.')}</span>
         </p>
       </div>
     </section>

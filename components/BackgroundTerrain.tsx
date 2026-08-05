@@ -58,7 +58,7 @@ export default function BackgroundTerrain() {
       // Define a grid size
       const gridSize = 35;
       
-      ctx.fillStyle = 'rgba(255, 255, 255, 1)'; 
+      ctx.fillStyle = 'rgba(26, 26, 26, 1)';
 
       const offsetX = (mouseX - width / 2) * 0.03;
       const offsetY = (mouseY - height / 2) * 0.03;
@@ -138,7 +138,7 @@ export default function BackgroundTerrain() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-40 mix-blend-screen"
+      className="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-20 mix-blend-multiply"
     />
   );
 }
